@@ -1,0 +1,10 @@
+function misha_default_catalog_orderby( $sort_by ) {
+		return 'date';
+}
+
+add_action('wp', 'custom1');
+function custom1() {
+	if( is_product_category( 'noel' ) ){
+		add_filter('woocommerce_default_catalog_orderby', 'misha_default_catalog_orderby');
+	}
+}
